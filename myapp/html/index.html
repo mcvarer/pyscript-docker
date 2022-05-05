@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>PyScript Hello World</title>
+
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+
+
+  </head>
+
+  <body>
+    Waoow Pythonnn! <br>
+    Calcute Aspect Ratio, as computed by Python:
+
+    <br>Example input value Height = 1920 & Width = 1080 </br>
+    
+
+    <py-script> 
+def calculate_aspect(width: int, height: int) -> str:
+
+    temp = 0
+
+    def gcd(a, b):
+        """The GCD (greatest common divisor) is the highest number that evenly divides both width and height."""
+        return a if b == 0 else gcd(b, a % b)
+
+    if width == height:
+        return "1:1"
+
+    if width < height:
+        temp = width
+        width = height
+        height = temp
+
+    divisor = gcd(width, height)
+
+    x = int(width / divisor) if not temp else int(height / divisor)
+    y = int(height / divisor) if not temp else int(width / divisor)
+
+    return f"{x}:{y}"
+    
+    </py-script>
+
+    <br>Pyton result =  </br> 
+    <py-script> 
+      print(calculate_aspect(1920,1080))
+    </py-script>
+
+
+
+  </body>
+</html>
