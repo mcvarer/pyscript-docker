@@ -6,6 +6,10 @@
 2. Html
 3. Python
 
+### Html Page
+<img src="imgs/output.png" alt="J" width="400"/>
+
+
 
 ### Usage Example
 
